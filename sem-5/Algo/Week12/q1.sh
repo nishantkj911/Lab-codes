@@ -1,0 +1,1 @@
+gcc -g subsetSum.c -o subsetSum && ./subsetSum < input1.txt

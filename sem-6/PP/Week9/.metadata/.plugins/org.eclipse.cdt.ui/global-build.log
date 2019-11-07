@@ -1,0 +1,146 @@
+16:49:31 **** Build of configuration Debug for project q3B ****
+make all 
+Building file: ../matAdd3B.cu
+Invoking: NVCC Compiler
+/usr/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "." -M -o "matAdd3B.d" "../matAdd3B.cu"
+/usr/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "matAdd3B.o" "../matAdd3B.cu"
+../matAdd3B.cu(12): error: expression must have arithmetic or enum type
+
+../matAdd3B.cu(10): warning: variable "row1" was declared but never referenced
+
+../matAdd3B.cu(64): error: identifier "dCol2" is undefined
+
+2 errors detected in the compilation of "/tmp/tmpxft_0000278d_00000000-7_matAdd3B.cpp1.ii".
+subdir.mk:18: recipe for target 'matAdd3B.o' failed
+make: *** [matAdd3B.o] Error 2
+16:50:01 **** Incremental Build of configuration Debug for project q2A ****
+make all 
+make: Nothing to be done for 'all'.
+16:50:36 **** Incremental Build of configuration Debug for project q2B ****
+make all 
+Building file: ../matAdd2B.cu
+Invoking: NVCC Compiler
+/usr/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "." -M -o "matAdd2B.d" "../matAdd2B.cu"
+/usr/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "matAdd2B.o" "../matAdd2B.cu"
+Finished building: ../matAdd2B.cu
+ 
+Building target: q2B
+Invoking: NVCC Linker
+/usr/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "q2B"  ./matAdd2B.o   
+Finished building target: q2B
+ 
+16:50:55 **** Incremental Build of configuration Debug for project q2C ****
+make all 
+make: Nothing to be done for 'all'.
+16:52:11 **** Incremental Build of configuration Debug for project q3B ****
+make all 
+Building file: ../matAdd3B.cu
+Invoking: NVCC Compiler
+/usr/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "." -M -o "matAdd3B.d" "../matAdd3B.cu"
+/usr/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "matAdd3B.o" "../matAdd3B.cu"
+../matAdd3B.cu(10): warning: variable "row1" was declared but never referenced
+
+../matAdd3B.cu(64): error: identifier "dCol2" is undefined
+
+1 error detected in the compilation of "/tmp/tmpxft_00002931_00000000-7_matAdd3B.cpp1.ii".
+subdir.mk:18: recipe for target 'matAdd3B.o' failed
+make: *** [matAdd3B.o] Error 2
+16:52:17 **** Build of configuration Debug for project q3B ****
+make all 
+Building file: ../matAdd3B.cu
+Invoking: NVCC Compiler
+/usr/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "." -M -o "matAdd3B.d" "../matAdd3B.cu"
+/usr/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "matAdd3B.o" "../matAdd3B.cu"
+../matAdd3B.cu(10): warning: variable "row1" was declared but never referenced
+
+../matAdd3B.cu(64): error: identifier "dCol2" is undefined
+
+1 error detected in the compilation of "/tmp/tmpxft_0000298b_00000000-7_matAdd3B.cpp1.ii".
+subdir.mk:18: recipe for target 'matAdd3B.o' failed
+make: *** [matAdd3B.o] Error 2
+16:52:39 **** Incremental Build of configuration Debug for project q3B ****
+make all 
+Building file: ../matAdd3B.cu
+Invoking: NVCC Compiler
+/usr/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "." -M -o "matAdd3B.d" "../matAdd3B.cu"
+/usr/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "matAdd3B.o" "../matAdd3B.cu"
+../matAdd3B.cu(10): warning: variable "row1" was declared but never referenced
+
+../matAdd3B.cu(10): warning: variable "row1" was declared but never referenced
+
+Finished building: ../matAdd3B.cu
+ 
+Building target: q3B
+Invoking: NVCC Linker
+/usr/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "q3B"  ./matAdd3B.o   
+Finished building target: q3B
+ 
+16:52:45 **** Incremental Build of configuration Debug for project q2C ****
+make all 
+make: Nothing to be done for 'all'.
+16:53:23 **** Incremental Build of configuration Debug for project q3B ****
+make all 
+make: Nothing to be done for 'all'.
+16:54:07 **** Incremental Build of configuration Debug for project q3B ****
+make all 
+Building file: ../matAdd3B.cu
+Invoking: NVCC Compiler
+/usr/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "." -M -o "matAdd3B.d" "../matAdd3B.cu"
+/usr/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "matAdd3B.o" "../matAdd3B.cu"
+../matAdd3B.cu(10): warning: variable "row1" was declared but never referenced
+
+../matAdd3B.cu(10): warning: variable "row1" was declared but never referenced
+
+Finished building: ../matAdd3B.cu
+ 
+Building target: q3B
+Invoking: NVCC Linker
+/usr/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "q3B"  ./matAdd3B.o   
+Finished building target: q3B
+ 
+16:55:03 **** Incremental Build of configuration Debug for project q3B ****
+make all 
+Building file: ../matAdd3B.cu
+Invoking: NVCC Compiler
+/usr/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "." -M -o "matAdd3B.d" "../matAdd3B.cu"
+/usr/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "matAdd3B.o" "../matAdd3B.cu"
+../matAdd3B.cu(11): error: identifier "j" is undefined
+
+../matAdd3B.cu(9): warning: variable "row1" was declared but never referenced
+
+1 error detected in the compilation of "/tmp/tmpxft_00002bca_00000000-7_matAdd3B.cpp1.ii".
+subdir.mk:18: recipe for target 'matAdd3B.o' failed
+make: *** [matAdd3B.o] Error 2
+16:55:07 **** Incremental Build of configuration Debug for project q3B ****
+make all 
+Building file: ../matAdd3B.cu
+Invoking: NVCC Compiler
+/usr/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "." -M -o "matAdd3B.d" "../matAdd3B.cu"
+/usr/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "matAdd3B.o" "../matAdd3B.cu"
+../matAdd3B.cu(11): error: identifier "j" is undefined
+
+../matAdd3B.cu(9): warning: variable "row1" was declared but never referenced
+
+1 error detected in the compilation of "/tmp/tmpxft_00002c20_00000000-7_matAdd3B.cpp1.ii".
+make: *** [matAdd3B.o] Error 2
+subdir.mk:18: recipe for target 'matAdd3B.o' failed
+16:55:34 **** Incremental Build of configuration Debug for project q3B ****
+make all 
+Building file: ../matAdd3B.cu
+Invoking: NVCC Compiler
+/usr/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "." -M -o "matAdd3B.d" "../matAdd3B.cu"
+/usr/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "matAdd3B.o" "../matAdd3B.cu"
+../matAdd3B.cu(9): warning: variable "row1" was declared but never referenced
+
+../matAdd3B.cu(9): warning: variable "row1" was declared but never referenced
+
+Finished building: ../matAdd3B.cu
+ 
+Building target: q3B
+Invoking: NVCC Linker
+/usr/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "q3B"  ./matAdd3B.o   
+Finished building target: q3B
+ 
+16:55:38 **** Incremental Build of configuration Debug for project q3B ****
+make all 
+make: Nothing to be done for 'all'.

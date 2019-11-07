@@ -1,0 +1,1 @@
+gcc heapSort.c -o heapSort && ./heapSort < input.txt

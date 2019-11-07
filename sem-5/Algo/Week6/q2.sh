@@ -1,0 +1,1 @@
+gcc -g mergeSort.c -o msOp && ./msOp < input2.txt

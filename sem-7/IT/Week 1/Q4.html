@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="myNewStyleSheet.css">
+        <title>
+            Question 4
+        </title>
+    </head>
+
+    <body>
+        <h1>Form 1</h1>
+        <myHeading>
+            This form is to verify your details. <br>
+        </myHeading>
+
+        <form id="form1" autocomplete="off">
+            Full Name: <input type="text" id="firstName" value="First Name" onfocus="this.form.firstName.value = null">
+            <input type="text" id="middleName" value="Middle Name" onfocus="this.form.middleName.value = null">
+            <input type="text" id="lastName" value="Last Name" onfocus="this.form.lastName.value = null"> <br>
+            
+            Gender: <input type="radio" name="gender" value="male"> Male <input type="radio" name="gender" value="female"> Female<br>
+            Address: <textarea form="form1" name="address" id="addressArea" cols="30" rows="5"></textarea><br>
+            Country: 
+            <select name="countryForm" form="form1" id="country">
+                <option value="None">None</option>
+                <option value="India">India</option>
+                <option value="Australia">Australia</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Korea">Korea</option>
+            </select><br>   
+            Email: <input type="email" id="email"><br>
+            Please upload a passport-sized photograph of yours: <input type="file" accept="image/*"><br>
+            <input type="reset" value="Clear">   <input type="submit" value="Submit" onclick="submissionMethod(this.form)"><br>
+        </form>
+        <hr width="35%" align="left">
+
+        <script>
+            function submissionMethod(form) {
+                alert("Successfully Submitted!!");
+                // window.blur();
+                // self.close();
+                // self.blur();
+                window.open("https://google.com");
+            }
+        </script>
+    </body>
+</html>

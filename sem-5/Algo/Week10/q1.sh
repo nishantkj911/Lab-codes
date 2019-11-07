@@ -1,0 +1,1 @@
+gcc -g warshallAlgo.c -o warshallAlgo && ./warshallAlgo

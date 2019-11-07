@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="Placement.Site2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <!-- script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></!-->
+
+    <title>Placement Portal</title>
+    <style>
+        .logo {
+            background-color: darksalmon;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer {
+            left: 0;
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+        }
+
+        .wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        #sidebar {
+            min-width: 250px;
+            max-width: 250px;
+            min-height: 100vh;
+        }
+
+            #sidebar.active {
+                margin-left: -250px;
+            }
+    </style>
+</head>
+
+<body data-spy="scroll">
+    <div class="container text-center logo">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="logo.jpeg" alt="Logo" class="img-responsive img-thumbnail" />
+            </div>
+            <div class="col-lg-6">
+                <h1>Placement Portal</h1>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                    <span>___</span>
+                </button>
+
+            </div>
+        </nav>
+    </div>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Menu</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active" style="padding-bottom: initial">
+                    <a href="StudentDetails.aspx" data-toggle="collapse" aria-expanded="false">Student Details</a>
+                </li>
+                <li style="padding-bottom: initial">
+                    <a href="Companies.aspx" data-toggle="collapse" aria-expanded="false">About</a>
+                </li>
+                <li style="padding-bottom: initial">
+                    <a href="RegisteredCompanies.aspx" data-toggle="collapse" aria-expanded="false">Registered Companies</a>
+                </li>
+                <li style="padding-bottom: initial">
+                    <a href="Schedules.aspx" data-toggle="collapse" aria-expanded="false">Schedules</a>
+                </li>
+                <li style="padding-bottom: initial">
+                    <a href="DownloadResumes.aspx" data-toggle="collapse" aria-expanded="false">Download Resumes</a>
+                </li>
+                <li style="padding-bottom: initial">
+                    <a href="EditResumes.aspx" data-toggle="collapse" aria-expanded="false">Edit Resumes</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+
+        });
+    </script>
+    <div class="container-fluid" style="margin-bottom: auto">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <footer style="background-color: grey">
+        <p>Contact Details </p>
+        <p><span class="glyphicon glyphicon-phone">3786329737</span></p>
+        <p><span class="glyphicon glyphicon-envelope">helpline@cdlc.com</span></p>
+        <p><span class="glyphicon glyphicon-map-marker">Chicago,US</span></p>
+        Creme de la creme Institute<br />
+        All rights reserved
+    </footer>
+</body>
+</html>
+

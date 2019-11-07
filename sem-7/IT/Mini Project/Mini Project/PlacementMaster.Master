@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PlacementMaster.master.cs" Inherits="Mini_Project.PlacementMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js-">
+    <script src="https://maxcdn.boostrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.css">
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="Content/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="Content/themes/base/accordion.css" rel="stylesheet" />
+    <link href="Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+    <script src="Scripts/jquery-3.4.1.js"></link>
+    <script src="Scripts/jquery-3.4.1.intellisense.js"></script>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/jquery-3.4.1.slim.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/popper-utils.js"></script>
+    <script src="Scripts/popper.js"></script>
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        function ToggleVisibility() {
+            var pnl = document.getElementById('<%=sidePanel.ClientID %>');
+            if (pnl.style.visibility == "visible") {
+                pnl.style.visibility = "hidden";
+            }
+            else if (pnl.style.visibility == "hidden") {
+                pnl.style.visibility = "visible";
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        var fileName = location.pathname.split("/").slice(-1);
+        //alert("'" + fileName + "'");
+        if (fileName.toString() == "LoginPage.aspx") {
+            document.getElementById('<%=LinkButton1.ClientID %>').disabled = true;
+            var pnl = document.getElementById('<%=sidePanel.ClientID %>');
+            pnl.style.visibility = "hidden";
+        }
+    </script>
+
+    <asp:ContentPlaceHolder ID="headerContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="background-color: aquamarine">
+            <!-- Header ></!-->
+            <div class="row">
+                <div class="text-center h1 col-11">Placement Portal</div>
+                <div class="col-1 align-bottom">
+                    <span class="btn-group-toggle">
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClientClick="ToggleVisibility(); return false;">Other Websites</asp:LinkButton>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10">
+                <asp:ContentPlaceHolder ID="bodyPlaceholder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="col-2">
+                <asp:Panel ID="sidePanel" runat="server" Style="visibility: hidden" CssClass="panel panel-info" BackColor="#66ccff">
+                    <asp:LinkButton ID="StudentProfile" runat="server" OnClick="StudentProfile_Click">Student Profile</asp:LinkButton><br />
+                    <asp:LinkButton ID="AcademicInfo" runat="server" OnClick="AcademicInfo_Click">See Academic Information</asp:LinkButton><br />
+                    <asp:LinkButton ID="ResumeLB" runat="server" OnClick="ResumeLB_Click">Update Resume</asp:LinkButton><br />
+                    <asp:LinkButton ID="CompaniesLB" runat="server" OnClick="CompaniesLB_Click">See Companies</asp:LinkButton>
+                </asp:Panel>
+            </div>
+        </div>
+        <footer>
+            <hr />
+            <div class="table">
+                <div class="row">
+                    <div class="col-7">
+                        <div>
+                            <span class="glyphicon glyphicon-phone"></span>
+                            <asp:Label ID="ContactUsLabel" runat="server" Text="Contact Us:"></asp:Label>
+                            <asp:Label ID="ContactsLabel" runat="server" Text="Numbers"></asp:Label><br />
+
+                        </div>
+                        <div>
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            <asp:Label ID="EmailLabel" runat="server" Text="Email:"></asp:Label>
+                            <asp:Label ID="Emails" runat="server" Text="helpdesk@hun.com"></asp:Label>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/lgoo.png" CssClass="float-right" />
+                    </div>
+                </div>
+                <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="CustomValidator"></asp:CustomValidator>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>

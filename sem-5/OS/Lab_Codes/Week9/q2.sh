@@ -1,0 +1,1 @@
+gcc dlDetection.c -o dlDetection && ./dlDetection < input2.txt

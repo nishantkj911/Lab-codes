@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <mpi.h>
+//#include <mpich/mpi.h>
+#include <string.h>
+
+char toggleCase(char a)
+{
+	if (a >= 'a' && a <= 'z')
+		a -= 32;
+	else if (a >= 'A' && a <= 'Z')
+		a += 32;
+
+	return a;
+}
+
+int main(int argc, char const *argv[])
+{
+	int rank, size, tag = 0;
+
+	MPI_Init(&argc, &argv);
+	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+	MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+	if (rank == 0)
+	{
+		char *buf = calloc(BUFSIZ, sizeof(char));
+		printf(" Enter the message\n");
+		scanf("%s", buf);
+		int len = strlen(buf);
+		len++;
+
+		MPI_Ssend(&len, 1, MPI_INT, 1, tag++, MPI_COMM_WORLD);
+		printf("Length sent successfully\n");
+		MPI_Ssend(buf, len + 1, MPI_CHAR, 1, tag++, MPI_COMM_WORLD);
+		printf("Message sent successfully\n");
+		MPI_Recv(buf, len + 1, MPI_CHAR, 1, tag++, MPI_COMM_WORLD, NULL);
+		printf("The recieved message is: %s", buf);
+	}
+	else if (rank == 1)
+	{
+		int len;
+		MPI_Recv(&len, 1, MPI_INT, 0, tag++, MPI_COMM_WORLD, NULL);
+		printf("Length recieved successfully\n");
+
+		char *buf = calloc(len, sizeof(char));
+		MPI_Recv(buf, len + 1, MPI_CHAR, 0, tag++, MPI_COMM_WORLD, NULL);
+		printf("Message recieved is %s\n", buf);
+
+		for (int i = 0; i < len; i++)
+		{
+			buf[i] = toggleCase(buf[i]);
+		}
+
+		MPI_Ssend(buf, len + 1, MPI_CHAR, 0, tag++, MPI_COMM_WORLD);
+		printf("Modified message sent successfully\n");
+	}
+	else
+	{
+		printf("we are sitting idle\n");
+	}
+	MPI_Finalize();
+	return 0;
+}

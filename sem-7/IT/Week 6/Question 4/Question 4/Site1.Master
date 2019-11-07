@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Question_4.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div>
+                <asp:ContentPlaceHolder ID="headerPH" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <div>
+                <div style="float: left; height:inherit">
+                    <asp:Panel ID="Panel1" runat="server">
+                        <asp:ContentPlaceHolder ID="leftPanel" runat="server"></asp:ContentPlaceHolder>
+                    </asp:Panel>
+                </div>
+                <div style="float: right; height:auto">
+                    <asp:ContentPlaceHolder ID="mainBody" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <footer>
+                <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
+    </footer>
+</body>
+</html>

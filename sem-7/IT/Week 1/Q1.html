@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="myNewStyleSheet.css" />
+    <meta charset="utf-8" />
+    <title>
+        Question 1
+    </title>
+</head>
+
+<body>
+    <h1>
+        Heading 1
+    </h1>
+    <p id="firstPara">
+        This is some content for the first para.<br />
+    </p>
+    <myHeading id="secondPara">
+        The coordinates of the previous paragraph is: <br>
+    </myHeading>
+    <script>
+        var rect = document.getElementById("firstPara").getBoundingClientRect();
+        var string = "Top: " + rect.top + " Bottom: " + rect.bottom + " Left: " + rect.left + " Right: " + rect.right;
+        document.getElementById("secondPara").innerHTML += string;
+    </script>
+</body>
+</html>

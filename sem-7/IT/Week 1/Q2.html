@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="myNewStyleSheet1.css">
+        <title>
+            Question 2
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            Current Time
+        </h1>
+        <canvas id="canvas1" width="500", height="500">
+            <script>
+                var ctx = document.getElementById("canvas1").getContext("2d");
+                // ctx.translate(100, 100);
+                ctx.strokeRect(100, 100, 50, 70);
+                ctx.strokeRect(170, 100, 50, 70);
+                
+                //add blinking : here
+
+                ctx.strokeRect(260, 100, 50, 70);
+                ctx.strokeRect(330, 100, 50, 70);
+                ctx.stroke();
+                setInterval(updateDate, 1000, ctx);
+
+                function updateDate(ctx) {
+                    var now = new Date();
+
+                    var hh = now.getHours();
+                    var mm = now.getMinutes();
+
+                    ctx.fillText(hh / 10, 115, 115);
+                    ctx.fillText(hh % 10, 185, 115);
+
+                    ctx.fillText(mm / 10, 275, 115);
+                    ctx.fillText(mm % 10, 345, 115);
+                }
+                
+            </script>
+        </canvas>
+    </body>
+</html>

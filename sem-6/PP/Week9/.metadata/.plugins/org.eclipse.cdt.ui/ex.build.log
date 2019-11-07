@@ -1,0 +1,16 @@
+15:52:14 **** Incremental Build of configuration Debug for project ex ****
+make all 
+Building file: ../vecAdd.cu
+Invoking: NVCC Compiler
+/usr/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "." -M -o "vecAdd.d" "../vecAdd.cu"
+/usr/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "vecAdd.o" "../vecAdd.cu"
+Finished building: ../vecAdd.cu
+ 
+Building target: ex
+Invoking: NVCC Linker
+/usr/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "ex"  ./vecAdd.o   
+Finished building target: ex
+ 
+
+15:52:17 Build Finished (took 3s.721ms)
+

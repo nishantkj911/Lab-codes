@@ -1,0 +1,4 @@
+﻿3:49 - Yo im still working on the question. I didn't think it would take this much time. If you see this, start debugging it now cuz it is going to take some time. Plus the kernel code is correct so if you think you can manage to lie, then write it down
+
+
+4:31 yo the c version of the code is in test.c so if you want copy the kernel from there

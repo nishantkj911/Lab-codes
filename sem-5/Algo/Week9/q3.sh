@@ -1,0 +1,1 @@
+gcc -g closedHashing.c -o closedHashing && ./closedHashing # < input2.txt

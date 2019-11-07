@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Students>
+  <Student id="160905074">
+    <Skills>
+      <Skill value="C++"></Skill>
+      <Skill value="Java"></Skill>
+      <Skill value="Python"></Skill>
+    </Skills>
+    <ProfessionalExperience>
+      <Job title="Summer Internship in Wipro"></Job>
+      <Job title="Summer Internship in Cairo Startup"></Job>
+    </ProfessionalExperience>
+    <CourseCertifications>
+      <Certification author="Coursera" title="Big Data Management and Modelling" />
+    </CourseCertifications>
+    <Recommendations>
+      <Recommendation TeacherName="Murali Krishna" Remarks="Outstanding Student" />
+    </Recommendations>
+  </Student>
+</Students>

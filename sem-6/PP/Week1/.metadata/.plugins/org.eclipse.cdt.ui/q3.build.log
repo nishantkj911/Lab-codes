@@ -1,0 +1,23 @@
+16:25:11 **** Incremental Build of configuration Debug for project q3 ****
+make all 
+Building file: ../q3.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/mpich -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"q3.d" -MT"q3.d" -o "q3.o" "../q3.c"
+../q3.c: In function ‘main’:
+../q3.c:23:21: warning: passing argument 2 of ‘MPI_Init’ from incompatible pointer type [-Wincompatible-pointer-types]
+     MPI_Init(&argc, &argv);
+                     ^
+In file included from ../q3.c:3:0:
+/usr/include/mpich/mpi.h:1115:5: note: expected ‘char ***’ but argument is of type ‘const char ***’
+ int MPI_Init(int *argc, char ***argv);
+     ^
+Finished building: ../q3.c
+ 
+Building target: q3
+Invoking: GCC C Linker
+gcc -L/usr/lib/mpich/lib -o "q3"  ./q3.o   -lmpi
+Finished building target: q3
+ 
+
+16:25:11 Build Finished (took 212ms)
+

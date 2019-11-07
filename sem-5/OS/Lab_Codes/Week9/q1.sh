@@ -1,0 +1,1 @@
+gcc -g bankersAlgo.c -o bankersAlgo && ./bankersAlgo < input1.txt

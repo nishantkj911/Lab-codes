@@ -1,0 +1,1 @@
+gcc -g avlTrees.c -o opq2 && ./opq2 < input2.txt

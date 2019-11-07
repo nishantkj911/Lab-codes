@@ -1,0 +1,1 @@
+gcc -g horspoolAlgo.c -o horspoolAlgo && ./horspoolAlgo < input1.txt

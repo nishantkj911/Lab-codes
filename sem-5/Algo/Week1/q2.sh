@@ -1,0 +1,1 @@
+gcc -g graph.c -o op2 && ./op2

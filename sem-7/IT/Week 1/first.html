@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+
+<header>
+    <font color="red" size="19" face="Courier New">Random Header</font>
+</header>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="myNewStyleSheet.css" />
+    <title>Some random Title</title>
+</head>
+<body>
+    <!--
+        
+    <section title="Section 1">
+        <article>
+            <h1>Google Chrome</h1>
+            <p>Google Chrome is a free, open-source web browser developed by Google, released in 2008.</p>
+        </article>
+    </section>
+    -->
+
+    <canvas id="firstCanvas" height="500" width="500" style="border: 2px dotted #15388a;">Canvas 1</canvas>
+    <!--
+        <script>
+        var canvas = document.getElementById("firstCanvas");
+        var context = canvas.getContext("2d");
+
+        context.fillStyle = "#15388a";
+        context.strokeStyle = "#11921F";
+        context.moveTo(100, 100);
+        context.lineTo(100, 300);
+        context.arc(200, 300, 100, 1 * Math.PI, 0, true);
+        context.fill();
+
+        context.lineTo(300, 100);
+        context.arc(200, 100, 100, 0, 1 * Math.PI, true);
+        context.stroke();
+
+         </script>
+    -->
+
+    <form action="https://google.com" name="myFirstForm">
+        First Name: <input type="text" name="firstName" /><br />
+        Last Name: <input type="text" name="lastName" /><br />
+        Password: <input type="password" name="pass1" /><br />
+        Re-enter password: <input type="password" name="pass2" /><br />
+        <input type="reset" value="Clear" />
+        <input type="submit" value="Submit" onclick="saveData(this.form)"/>
+        <script>
+            function saveData(form) {
+                var firstName = form.firstName.value;
+                var lastName = form.lastName.value;
+                var pass1 = form.pass1.value;
+                var pass2 = form.pass2.value;
+
+                if (pass1 == null || pass1.equals(pass2))
+                {
+                    alert("The passwords do not match!");
+                }
+                else
+                {
+                    window.open("https://google.com", _blank);
+                }
+            }
+        </script>
+    </form>
+
+
+
+</body>
+</html>
+
+<footer>
+    <myHeading>Random Footer</myHeading>
+</footer>

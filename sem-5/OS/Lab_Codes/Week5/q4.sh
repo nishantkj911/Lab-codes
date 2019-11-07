@@ -1,0 +1,1 @@
+gcc -pthread q4.c -o opq4 && ./opq4

@@ -1,0 +1,15 @@
+15:11:02 **** Incremental Build of configuration Debug for project q1 ****
+make all 
+Building file: ../q1.c
+Invoking: Cross GCC Compiler
+gcc -I/usr/include/mpich -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"q1.d" -MT"q1.d" -o "q1.o" "../q1.c"
+Finished building: ../q1.c
+ 
+Building target: q1
+Invoking: Cross GCC Linker
+gcc -L/usr/lib/mpich/lib -o "q1"  ./q1.o   -lmpi
+Finished building target: q1
+ 
+
+15:11:03 Build Finished (took 265ms)
+

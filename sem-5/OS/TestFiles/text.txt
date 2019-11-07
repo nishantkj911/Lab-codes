@@ -1,0 +1,12 @@
+total 1232
+-rw-rw-r-- 1 student student      0 Aug  3 21:33 a.c
+drwxrwxr-x 4 student student   4096 Aug  2 14:46 c47
+-rw-r--r-- 1 student student 970752 Jul 25 22:15 CSE 3111_OS_2018.doc
+-rw-rw-r-- 1 student student 239345 Jul 27 14:08 CSE 3111_OS_2018.pdf
+-rw-r--r-- 1 student student   2238 Aug 12  2017 ex.tcl
+drwxrwxr-x 2 student student   4096 Jul 26 09:11 Folder1
+-rw-r--r-- 1 student student  21637 Aug  2 14:11 LAB NO 2.docx
+drwxrwxr-x 3 student student   4096 Aug  3 19:30 Nishant
+-rw-rw-r-- 1 student student      0 Aug  3 21:33 x.b
+-rw-rw-rw- 1 student student     11 Jul 26 09:15 xstart
+-rw-rw-r-- 1 student student     22 Jul 26 09:03 xyz

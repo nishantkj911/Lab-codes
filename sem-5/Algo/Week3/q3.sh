@@ -1,0 +1,1 @@
+gcc -g bfPartition.c -o op3 -lm && ./op3 < input3.txt

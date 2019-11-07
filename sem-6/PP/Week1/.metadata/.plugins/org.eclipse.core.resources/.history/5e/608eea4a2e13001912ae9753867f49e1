@@ -1,0 +1,22 @@
+#include <mpi.h>
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+    int rank, size;
+
+    int n;
+    scanf("%i", &n);
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    FILE *input = fopen("input.txt", "r");
+    int n;
+    fscanf(input, "%i", &n);
+
+    printf("%i\n", n + rank);
+    MPI_Finalize();
+    return 0;
+}
+

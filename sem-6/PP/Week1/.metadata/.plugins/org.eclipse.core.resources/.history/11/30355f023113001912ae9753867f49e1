@@ -1,0 +1,29 @@
+#include <mpi.h>
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+    int rank, size;
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    FILE *input = fopen("input.txt", "r");
+    if (input == NULL)
+    {
+        printf("Input file not found\n");
+    }
+    else
+    {
+        int r1, c1, r2, c2;
+        fscanf(input, "%i", &r1);
+        fscanf(input, "%i", &c1);
+        fscanf(input, "%i", &r2);
+        fscanf(input, "%i", &c2);
+
+        printf("%i %i %i %i", r1, r2, c1, c2);
+        fclose(input);
+    }
+    MPI_Finalize();
+    return 0;
+}

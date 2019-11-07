@@ -1,0 +1,15 @@
+16:29:19 **** Build of configuration Debug for project ex2 ****
+make all 
+Building file: ../ex2.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/mpich -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"ex2.d" -MT"ex2.d" -o "ex2.o" "../ex2.c"
+Finished building: ../ex2.c
+ 
+Building target: ex2
+Invoking: GCC C Linker
+gcc -L/usr/lib/mpich/lib -o "ex2"  ./ex2.o   -lmpi
+Finished building target: ex2
+ 
+
+16:29:20 Build Finished (took 1s.100ms)
+

@@ -1,0 +1,106 @@
+select course_id from teaches where semester = 'Fall' and year = 2009 union
+select course_id from teaches where semester = 'Spring' and year = 2010;
+
+select course_id from teaches where semester = 'Fall' and year = 2009 intersect
+select course_id from teaches where semester = 'Spring' and year = 2010;
+
+select course_id from teaches where semester = 'Fall' and year = 2009 minus
+select course_id from teaches where semester = 'Spring' and year = 2010;
+
+
+select avg(salary) avg_sal from instructor
+where dept_name = 'Comp. Sci.';
+
+select count(*) from teaches where semester = 'Spring' and year = '2010';
+
+select course_id, count(ID) from takes
+group by course_id;
+
+select dept_name, count from
+(select course.dept_name, count(takes.ID) count from takes, course
+group by dept_name) where count > 22;
+
+select dept_name, count(course_id) from course
+group by dept_name;
+
+select dept_name, avg(salary) avg_sal from instructor
+group by dept_name
+having avg(salary) > 42000;
+
+select course_id, course.title from course where course_id not in 
+(select course_id from takes);
+
+select course_id from teaches where semester = 'Fall' and year = 2009 and course_id IN
+(select course_id from teaches where semester = 'Spring' and year = 2010);
+
+select distinct count(takes.id) from takes, teaches
+where takes.course_id = teaches.course_id and teaches.id = '10101';
+
+select course_id from teaches where semester = 'Fall' and year = 2009 and course_id NOT IN
+(select course_id from teaches where semester = 'Spring' and year = 2010);
+
+select id, name, salary from instructor where salary >some
+(select salary from instructor where dept_name = 'Biology');
+
+select id, name, salary from instructor where salary >all
+(select salary from instructor where dept_name = 'Biology');
+
+select course_id from section S
+where semester = 'Fall' and year= 2009 and
+exists (select * from section T
+where semester = 'Spring' and year= 2010 and S.course_id= T.course_id);
+
+select distinct ID from takes T
+where exists (
+select course_id from course S where dept_name = 'Biology' and T.course_ID = S.course_id);
+
+select course_ID from course T
+where 1>= (select count(T.course_ID) from section S
+	where T.course_ID = S.course_ID and year = 2009);
+
+//d
+select max(sum(salary)) from instructor group by dept_name;
+
+select dept_name, avg(salary) from instructor
+group by dept_name having avg(salary) > 42000;
+
+
+with dep_bud(bud) as (select budget from department)
+select name, max(bud) from dep_bud;
+
+with total_sal(name, val) as (select dept_name, sum(salary) from instructor group by dept_name), 
+avg_sal(val) as (select avg(total_sal.val) from total_sal)
+
+select name, total_sal.val from total_sal, avg_sal
+where total_sal.val > avg_sal.val;
+
+create view all_courses as
+select course_id, sec_id, building, room_number from section join course using(course_id)
+where dept_name = 'Physics' and semester = 'Fall' and year = 2009;
+
+select * from all courses;
+
+create view dept_total_sal(name, total) as
+select dept_name, sum(salary) from instructor
+group by dept_name;
+
+savepoint lab3;
+
+create view dept_total_sal as select dept_name sum(salary) as total from instructor group by dept_name;
+
+delete from instructor where dept_name = 'Finance';
+
+delete from course where dept_name = 'Comp. Sci.';
+
+update student2 set dept_name = 'IT' where dept_name = 'Comp. Sci';
+
+update instructor set salary = case
+	when(salary > 100000) then salary * 1.03
+	else salary * 1.05
+	end;
+insert into sutdent2 (ID, name, dept_name, tot_cred)
+	select ID, namem, dept_name, 0 from instructor;
+
+delete from instructor where salary < (select avg(salary) from instructor);
+
+rollback to lab3;

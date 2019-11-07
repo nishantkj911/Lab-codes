@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Example Program
+        </title>
+        <link rel="stylesheet" href="myStyle.css">
+    </head>
+
+    <body>
+        <h1>
+            Heading 1
+        </h1>
+        <p>
+            This is sample paragraph text.
+        </p>
+        <form name="myForm1" >
+            Username: <input type="text" name="username" value="Enter username here" onfocus="this.form.username.value = null"><br>
+            Password: <input type="password" name="password"><br>
+            <input type="submit" onclick="myMethod(this.form)" value="Login">
+            <input type="reset" value="Reset">
+        </form>
+        <script>
+            function myMethod(form) {
+                if (form.username.value == "Nishant" && form.password.value == "nish911")
+                    window.open("https://google.com");
+
+                else
+                {
+                    alert("Incorrect Username or Password!!");
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <mpi.h>
+#include <string.h>
+
+char vowels[] = "aeiouAEIOU";
+
+int isNonVowel(char c)
+{
+    for (int i = 0; i < strlen(vowels); i++)
+    {
+        if (c == vowels[i])
+            return 0;
+    }
+
+    return 1;
+}
+
+int main(int argc, char *argv[])
+{
+    int rank, n, len, *tempNoOfNonVowels, totalNoOfNonVowels;
+    char *str = calloc(BUFSIZ, sizeof(int));
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &n);
+
+    if (rank == 0)
+    {
+        printf("Enter the string\n");
+        scanf("%[^\n]%*c", str);
+
+        len = strlen(str);
+        if (len % n != 0)
+        {
+            fprintf(stderr, "The length of the string is not a multiple of the no. of processes\n");
+        }
+
+        tempNoOfNonVowels = calloc(n, sizeof(int));
+    }
+
+    MPI_Bcast(&len, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+    int tempLen = len / n, noOfNonVowels = 0;
+    char *buf = calloc(tempLen, sizeof(char));
+    MPI_Scatter(str, tempLen, MPI_CHAR, buf, tempLen, MPI_CHAR, 0, MPI_COMM_WORLD);
+
+    for (int i = 0; i < tempLen; i++)
+    {
+        if (isNonVowel(buf[i]))
+        {
+            noOfNonVowels++;
+        }
+    }
+    // printf("The rank %i recieved string '%s' and no of non vowels is %i\n", rank, buf, noOfNonVowels);
+
+    MPI_Gather(&noOfNonVowels, 1, MPI_INT, tempNoOfNonVowels, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&noOfNonVowels, &totalNoOfNonVowels, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+
+    if (rank == 0)
+    {
+        printf("The values recieved by all the procs are:\n");
+        for (int i = 0; i < n; i++)
+        {
+            printf("Process with rank %i found %i non-Vowels\n", i, tempNoOfNonVowels[i]);
+        }
+
+        printf("The total no of non Vowels = %i\n", totalNoOfNonVowels);
+    }
+
+    MPI_Finalize();
+    return 0;
+}

@@ -1,0 +1,3 @@
+Nishant is in OS lab
+I am doing Week 2
+I am shell scripting

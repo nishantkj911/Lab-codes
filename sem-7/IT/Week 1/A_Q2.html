@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="myNewStyleSheet.css">
+        <title>
+            Additional Q2
+        </title>
+    </head>
+
+    <body onload="init()">
+        <h1>Rainfall</h1>
+        <canvas id="newCanvas" width="1000" height="1000"></canvas>
+        <script>
+            var ctx;
+            function init() {
+                ctx = document.getElementById("newCanvas").getContext("2d");
+                ctx.strokeRect(0, 0, 1000, 600);
+            }
+        </script>
+    </body>
+</html>

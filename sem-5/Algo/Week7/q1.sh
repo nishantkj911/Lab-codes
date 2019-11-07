@@ -1,0 +1,1 @@
+gcc -g balanceFactor.c -o opq1 && ./opq1

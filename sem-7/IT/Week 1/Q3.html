@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="myNewStyleSheet.css">
+        <title>
+            Q3
+        </title>
+    </head>
+
+    <body onload="init()">
+        <h1>Bouncing Ball</h1>
+        <canvas id="newCanvas" width="1000" height="1000">Your Browser doesn't support canvases</canvas>
+        <script>
+            var ctx;
+            var angle;
+            var x, y, dx, dy;
+            function movement(angle)
+            {
+
+            }
+            
+            function init()
+            {
+                x = 150;
+                y = 150;
+                ctx = document.getElementById("newCanvas").getContext("2d");
+                ctx.strokeRect(50, 50, 200, 200);
+                setInterval(draw, 10);
+                dx = 1;
+                dy = 1;
+            }
+
+            function draw() // implement using a random angle and then reflecting on the basis of that.
+            {
+                ctx.clearRect(50, 50, 200, 200);
+                ctx.beginPath();
+                ctx.fillStyle="#cc11aa";
+                ctx.arc(x, y, 5, 0, 2 * Math.PI);
+                ctx.closePath();
+                ctx.fill();
+                if (x < 55 || x > 240)
+                    dx = -dx;
+                if (y < 60 || y > 240)
+                    dy = -dy;
+                x += dx;
+                y += dy;
+            }
+        </script>
+    </body>
+</html>

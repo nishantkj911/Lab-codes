@@ -1,0 +1,1 @@
+gcc -g zeroOneKnapsack.c -o zeroOneKnapsack && ./zeroOneKnapsack < input1.txt

@@ -1,0 +1,89 @@
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+__global__ void matAdd(int *A, int *B, int *C, int *n, int *col2)
+{
+    int i = blockIdx.x;
+    int j = threadIdx.x;
+    int row1 = gridDim.x;
+    
+    C[i * (*col2) + j] = 0;
+    for (int i = 0; i < *col2; i++)
+    {
+        for (int k = 0; k < *n; k++)
+        {
+            C[i * (*col2) + j] += A[i * (*n) + k] * B[k * (*col2) + j];
+        }
+    }
+}
+
+int main()
+{
+    int row1, col1, row2, col2;
+    printf("Enter the row and columns of matrix 1\n");
+    scanf("%i %i", &row1, &col1);
+    int totalElements1 = row1 * col1, *dN, *dCol2;
+
+    printf("Enter the row and columns of matrix 2\n");
+    scanf("%i %i", &row2, &col2);
+    int totalElements2 = row2 * col2, totalElements3 = row1 * col2;
+
+    if(col1 != row2)
+    {
+        printf("Incompatible dimensions\n");
+        return 1;
+    }
+
+    int *matA = (int *)calloc(totalElements1, sizeof(int)), *dA;
+    int *matB = (int *)calloc(totalElements2, sizeof(int)), *dB;
+    int *matC = (int *)calloc(totalElements3, sizeof(int)), *dC;
+    printf("Enter elements of A matrix\n");
+    for (int i = 0; i < row1; i++)
+    {
+        for (int j = 0; j < col1; j++)
+        {
+            scanf("%i", &matA[i * col1 + j]);
+        }
+    }
+
+    printf("Enter elements of B matrix\n");
+    for (int i = 0; i < row2; i++)
+    {
+        for (int j = 0; j < col2; j++)
+        {
+            scanf("%i", &matB[i * col2 + j]);
+        }
+    }
+
+    cudaMalloc(&dA, sizeof(int) * totalElements1);
+    cudaMalloc(&dB, sizeof(int) * totalElements2);
+    cudaMalloc(&dC, sizeof(int) * totalElements3);
+    cudaMalloc(&dN, sizeof(int));
+    cudaMalloc(&dCol2, sizeof(int));
+
+    cudaMemcpy(dA, matA, sizeof(int) * totalElements1, cudaMemcpyHostToDevice);
+    cudaMemcpy(dB, matB, sizeof(int) * totalElements2, cudaMemcpyHostToDevice);
+    cudaMemcpy(dN, &row2, sizeof(int), cudaMemcpyHostToDevice);
+    cudaMemcpy(dCol2, &col2, sizeof(int), cudaMemcpyHostToDevice);
+
+    matAdd<<<row1, 1>>>(dA, dB, dC, dN, dCol2);
+
+    cudaMemcpy(matC, dC, sizeof(int) * totalElements3, cudaMemcpyDeviceToHost);
+
+    printf("Result Matrix is\n");
+    for (int i = 0; i < row1; i++)
+    {
+        for (int j = 0; j < col2; j++)
+        {
+            printf("%i ", matC[i * col2 + j]);
+        }
+        printf("\n");
+    }
+    
+    cudaFree(dA);
+    cudaFree(dB);
+    cudaFree(dC);
+    cudaFree(dN);
+}

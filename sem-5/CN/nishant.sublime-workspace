@@ -1,0 +1,239 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cli",
+				"cli_addr"
+			],
+			[
+				"cl",
+				"cli_addr"
+			],
+			[
+				"sin_",
+				"sin_port"
+			],
+			[
+				"s_a",
+				"sin_addr"
+			],
+			[
+				"sock",
+				"sock_desc"
+			],
+			[
+				"soc",
+				"sock_desc"
+			],
+			[
+				"clie",
+				"clilen"
+			],
+			[
+				"socket",
+				"socket_desc"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/160905074/Documents",
+		"/home/160905074/Documents/Week2",
+		"/home/160905074/Documents/Week5"
+	],
+	"file_history":
+	[
+		"/home/160905074/Documents/Week3/DaytimeS.c",
+		"/home/160905074/Documents/Week3/dt_s.sh",
+		"/home/160905074/Documents/Week3/DaytimeC.c",
+		"/home/160905074/Documents/Week2/dayTime_server.c",
+		"/home/160905074/Documents/Week3/math.sh",
+		"/home/160905074/Documents/Week3/SortIntCli.c",
+		"/home/160905074/Documents/Week3/SortInt.c",
+		"/home/160905074/Documents/Week2/q1.sh",
+		"/home/160905074/Documents/Week3/sort.sh",
+		"/home/160905074/Documents/Week3/MathCli.c",
+		"/home/160905074/Documents/Week3/MathServer.c",
+		"/home/160905074/Documents/Week2/ex.sh",
+		"/home/160905074/Documents/Week2/ex_server.c",
+		"/home/160905074/Documents/Week2/ex_client.c",
+		"/home/160905074/Documents/Week2/op_server",
+		"/home/160905074/Documents/Week2/dayTime_client.c",
+		"/media/160905074/1C4C2FB04C2F839C/C_13/Week2/q2_server.c",
+		"/media/160905074/1C4C2FB04C2F839C/C_13/Week3/q1_client.c",
+		"/media/160905074/1C4C2FB04C2F839C/C_13/Week3/q1_server.c",
+		"/media/160905074/1C4C2FB04C2F839C/C_13/Week3/ex_client.c",
+		"/media/160905074/1C4C2FB04C2F839C/C_13/Week3/ex_server.c",
+		"/media/160905074/1C4C2FB04C2F839C/C_13/Week2/q1.sh",
+		"/bin/pwd",
+		"/home/160905074/Desktop/Week2/ex_server.c",
+		"/home/160905074/Desktop/Week2/q2_server.c",
+		"/home/160905074/Desktop/Week2/ex_client.c",
+		"/home/160905074/Desktop/Week2/ex.client",
+		"/home/160905074/Desktop/Week2/q1.c"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"arr",
+			"#include <stdio.h>",
+			"include",
+			"#",
+			"sock_desc",
+			"));\n",
+			"());"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"recv_arr",
+			"socket_desc"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "nishant.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--This is an auto generated XML file.-->
+<Cars>
+  <Detail>
+    <Name>I20</Name>
+    <Make>Hyundai</Make>
+    <Price>700000</Price>
+  </Detail>
+  <Detail>
+    <Name>Alto</Name>
+    <Make>Maruti Suzuki</Make>
+    <Price>300000</Price>
+  </Detail>
+</Cars>

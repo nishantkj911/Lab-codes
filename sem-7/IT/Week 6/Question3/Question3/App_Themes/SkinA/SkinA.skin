@@ -1,0 +1,9 @@
+﻿<asp:Button SkinId="GreenButton" runat="server" Text="Button" BackColor="#99FF99" 
+BorderColor="#009933" BorderStyle="Double" BorderWidth="2px" Font-Bold="True" 
+Font-Names="Castellar" Font-Overline="False" ForeColor="#009933" />
+
+<asp:Button SkinId="PinkButton" runat="server" Text="Button" 
+BackColor="#FF99FF" BorderColor="#660066" ForeColor="#9900CC" />
+
+<asp:TextBox runat="server" BackColor="#3399FF" 
+BorderColor="#000066" BorderStyle="Dotted" BorderWidth="3px" ForeColor="#0000CC"></asp:TextBox>

@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Question_2.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="headPlaceholder" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="bodyPlaceholder" runat="server"></asp:ContentPlaceHolder>
+            <hr />
+        </div>
+        <div>
+            <div>
+                Example Company
+            </div>
+            <div>
+                <asp:Image ID="Image1" runat="server" ImageUrl="logo.png" />
+            </div>
+            <div>
+                <asp:Label runat="server" Text="Contact Us: +91-9007572145"></asp:Label>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

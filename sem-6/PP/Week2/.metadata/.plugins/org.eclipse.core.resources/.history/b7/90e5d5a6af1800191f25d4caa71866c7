@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <mpi.h>
+
+int sumArray(int *arr, int n)
+{
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += arr[i];
+    }
+}
+
+int main(int argc, char *argv[])
+{
+    int rcvr[] = {1, 2}, sender = 0, tag = 0;
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    MPI_Status status;
+    if (rank == sender)
+    {
+        int n;
+        printf("Enter the no. of elements\n");
+        scanf("%i", &n);
+
+        int *arr = calloc(n, sizeof(int));
+        printf("Enter the elements in the array\n");
+        for (int i = 0; i < n; i++)
+        {
+            scanf("%i ", &arr[i]);
+        }
+
+        MPI_Send(&n, 1, MPI_INT, rcvr[0], tag, MPI_COMM_WORLD);
+        MPI_Send(&n, 1, MPI_INT, rcvr[1], tag++, MPI_COMM_WORLD);
+
+        MPI_Send(arr, n, MPI_INT, rcvr[0], tag, MPI_COMM_WORLD);
+        MPI_Send(arr, n, MPI_INT, rcvr[1], tag++, MPI_COMM_WORLD);
+        printf("All sends done\n");
+
+        int sum1, sum2;
+        MPI_Recv(&sum1, 1, MPI_INT, rcvr[0], tag, MPI_COMM_WORLD);
+        printf("The rank %i sent %i as its sum\n", rcvr[0], sum1);
+        MPI_Recv(&sum2, 1, MPI_INT, rcvr[1], tag++, MPI_COMM_WORLD);
+        printf("The rank %i sent %i as its sum\n", rcvr[1], sum2);
+    }
+    else if (rank == rcvr[0] || rank == rcvr[1])
+    {
+        double currTime = MPI_Wtime();
+        int n;
+        MPI_Recv(&n, 1, MPI_INT, sender, tag++, MPI_COMM_WORLD, &status);
+
+        int *arr = calloc(n, sizeof(int));
+        MPI_Recv(arr, n, MPI_INT, sender, tag++, MPI_COMM_WORLD, &status);
+
+        int sum = sumArray(arr, n);
+
+        MPI_Send(&sum, 1, MPI_INT, sender, tag++, MPI_COMM_WORLD);
+
+        double timeTaken = MPI_WTime() - currTime;
+        printf("The time taken for rank %i to do the task is %f\n", rank, timeTaken);
+    }
+
+    MPI_Finalize();
+    return 0;
+}

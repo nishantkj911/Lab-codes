@@ -1,0 +1,94 @@
+create table Employee  
+(  
+    EmpNo number(6) primary key,  
+    EmpName varchar(30) not null,  
+    Sex char(1) not null,  
+    Salary number(10) default(1000) not null,  
+    Address varchar(50) not null,  
+    DNo char(5), 
+    check (Sex in ('M', 'F')) 
+);
+
+create table Department2
+(
+    DeptNo char(5) primary key,
+    DeptName varchar(30) unique not null,
+    Loc varchar(10)
+);
+
+
+
+alter table Employee add constraint FK foreign key(DNo) references Department2(DeptNo);
+
+insert into Department2 values
+('DEPT1', 'Finance', 'Bank');
+insert into Department2 values
+('DEPT2', 'Development', 'Cubicles');
+insert into Department2 values
+('DEPT3', 'Human Resources', 'Oblivion');
+insert into Department2 values
+('DEPT4', 'Marketing', 'Streets');
+
+insert into Employee values
+(109284, 'Nishant K. Joshyabhatla', 'M', 100000, 'uyhgfvasf bvae', 'DEPT4');
+insert into Employee values
+(981723, 'Robert Downey Jr.', 'M', 10000000, 'iadsbfkjsdb asdfnm', 'DEPT2');
+insert into Employee values
+(782614, 'Kiara Katherine', 'F', 10101010, 'qhjg vrwfq jfhvwfrq','DEPT1');
+insert into Employee values
+(172863, 'Chris Evanson', 'M', 250000, 'gjhjb asdcujiv we fa dsf','DEPT1');
+insert into Employee values
+(052614, 'Jane Doe', 'F', 36000, 'iua gfiua fui aiufs ad', 'DEPT3');
+insert into Employee values
+(108838, 'Dishari Mukherjee', 'F', 5000000,
+ 'Afhu asuofa ushf ioshf', 'DEPT5', '22-Aug-1998');
+
+insert into employee values
+(101029, 'Viola Tor', 'L', 0, 'ashf vhsa ahwfiuj', 'DEPT5');
+insert into department2 values
+('DEPT65', 'Null-value', 'Somewhere');
+
+insert into department2 values
+('DEPT5', 'Null-value', 'Somewhere');
+insert into employee (Empno, empname, sex, address, dno) values
+(101029, 'Non Viola Tor', 'F', 'ashf vhsa ahwfiuj', 'DEPT5');
+
+alter table employee drop constraint FK;
+alter table employee add constraint FK 
+foreign key(Dno) references department2(deptno) on delete cascade; 
+
+select name, length(name) name_length from student2;
+
+select lower(name) low_names from instructor;
+
+select dept_name, substr(dept_name, 3, 3) from department;
+
+update takes set grade = nvl(grade, 0);
+
+select budget, round(budget/3, 2) from department;
+
+alter table employee add DOB date;
+
+update employee set DOB = '11-Sep-1998' where empno = 109284;
+update employee set DOB = '23-Aug-1967' where empno = 981723;
+update employee set DOB = '01-Jun-1998' where empno = 782614;
+update employee set DOB = '17-Dec-1955' where empno = 172863;
+update employee set DOB = '21-Mar-1990' where empno = 52614;
+update employee set DOB = '22-Aug-1997' where empno = 101029;
+
+select empname, to_char(DOB, 'dd-mon-yyyy') Date_Of_Birth from employee;
+select empname, to_char(DOB, 'dd-mon-yy') Date_Of_Birth from employee;
+select empname, to_char(DOB, 'dd-mm-yy') Date_Of_Birth from employee;
+
+--17 Not complete
+select empname, extract(year from DOB) year from employee;
+
+--21
+select Empname, extract(year from sysdate) - extract(year from DOB) Age from Employee; 
+
+--23
+select Empname from Employee where extract(year from DOB) = 1998;
+
+select empname from employee
+where extract(year from DOB) between 1990 and 2000;
+

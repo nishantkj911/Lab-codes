@@ -1,0 +1,84 @@
+11:41:05 **** Incremental Build of configuration Debug for project SwapAdjacent ****
+make all 
+Building file: ../q.c
+Invoking: GCC C Compiler
+gcc -I/usr/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"q.d" -MT"q.o" -o "q.o" "../q.c"
+In file included from /usr/include/CL/cl.h:36,
+                 from ../q.c:3:
+/usr/include/CL/cl_version.h:34:9: note: #pragma message: cl_version.h: CL_TARGET_OPENCL_VERSION is not defined. Defaulting to 220 (OpenCL 2.2)
+ #pragma message("cl_version.h: CL_TARGET_OPENCL_VERSION is not defined. Defaulting to 220 (OpenCL 2.2)")
+         ^~~~~~~
+../q.c: In function ‘main’:
+../q.c:35:37: warning: pointer targets in passing argument 3 of ‘clGetPlatformIDs’ differ in signedness [-Wpointer-sign]
+     ret = clGetPlatformIDs(1, &plt, &numPlt);
+                                     ^~~~~~~
+In file included from ../q.c:3:
+/usr/include/CL/cl.h:844:1: note: expected ‘cl_uint *’ {aka ‘unsigned int *’} but argument is of type ‘cl_int *’ {aka ‘int *’}
+ clGetPlatformIDs(cl_uint          /* num_entries */,
+ ^~~~~~~~~~~~~~~~
+../q.c:36:62: warning: pointer targets in passing argument 5 of ‘clGetDeviceIDs’ differ in signedness [-Wpointer-sign]
+     ret = clGetDeviceIDs(plt, CL_DEVICE_TYPE_GPU, 1, &devid, &numDevID);
+                                                              ^~~~~~~~~
+In file included from ../q.c:3:
+/usr/include/CL/cl.h:857:1: note: expected ‘cl_uint *’ {aka ‘unsigned int *’} but argument is of type ‘cl_int *’ {aka ‘int *’}
+ clGetDeviceIDs(cl_platform_id   /* platform */,
+ ^~~~~~~~~~~~~~
+../q.c:38:71: warning: pointer targets in passing argument 6 of ‘clCreateContext’ differ in signedness [-Wpointer-sign]
+     cl_context context = clCreateContext(NULL, 1, &devid, NULL, NULL, &ret);
+                                                                       ^~~~
+In file included from ../q.c:3:
+/usr/include/CL/cl.h:907:1: note: expected ‘cl_int *’ {aka ‘int *’} but argument is of type ‘cl_uint *’ {aka ‘unsigned int *’}
+ clCreateContext(const cl_context_properties * /* properties */,
+ ^~~~~~~~~~~~~~~
+../q.c:39:5: warning: ‘clCreateCommandQueue’ is deprecated [-Wdeprecated-declarations]
+     cl_command_queue cq = clCreateCommandQueue(context, devid, CL_QUEUE_PROFILING_ENABLE, &ret);
+     ^~~~~~~~~~~~~~~~
+In file included from ../q.c:3:
+/usr/include/CL/cl.h:1741:1: note: declared here
+ clCreateCommandQueue(cl_context                     /* context */,
+ ^~~~~~~~~~~~~~~~~~~~
+../q.c:39:91: warning: pointer targets in passing argument 4 of ‘clCreateCommandQueue’ differ in signedness [-Wpointer-sign]
+     cl_command_queue cq = clCreateCommandQueue(context, devid, CL_QUEUE_PROFILING_ENABLE, &ret);
+                                                                                           ^~~~
+In file included from ../q.c:3:
+/usr/include/CL/cl.h:1741:1: note: expected ‘cl_int *’ {aka ‘int *’} but argument is of type ‘cl_uint *’ {aka ‘unsigned int *’}
+ clCreateCommandQueue(cl_context                     /* context */,
+ ^~~~~~~~~~~~~~~~~~~~
+../q.c:41:88: warning: passing argument 5 of ‘clCreateBuffer’ makes pointer from integer without a cast [-Wint-conversion]
+     cl_mem aMemObj = clCreateBuffer(context, CL_MEM_READ_WRITE, n * sizeof(int), NULL, ret);
+                                                                                        ^~~
+In file included from ../q.c:3:
+/usr/include/CL/cl.h:965:16: note: expected ‘cl_int *’ {aka ‘int *’} but argument is of type ‘cl_uint’ {aka ‘unsigned int’}
+                cl_int *     /* errcode_ret */) CL_API_SUFFIX__VERSION_1_0;
+                ^~~~~~~~
+../q.c:45:60: warning: passing argument 3 of ‘clCreateProgramWithSource’ from incompatible pointer type [-Wincompatible-pointer-types]
+     cl_program pgm = clCreateProgramWithSource(context, 1, &sourcePgm, &sourcePgmSize, &ret);
+                                                            ^~~~~~~~~~
+In file included from ../q.c:3:
+/usr/include/CL/cl.h:1094:27: note: expected ‘const char **’ but argument is of type ‘char **’
+                           const char **     /* strings */,
+                           ^~~~~~~~~~~~~
+../q.c:45:88: warning: pointer targets in passing argument 5 of ‘clCreateProgramWithSource’ differ in signedness [-Wpointer-sign]
+     cl_program pgm = clCreateProgramWithSource(context, 1, &sourcePgm, &sourcePgmSize, &ret);
+                                                                                        ^~~~
+In file included from ../q.c:3:
+/usr/include/CL/cl.h:1092:1: note: expected ‘cl_int *’ {aka ‘int *’} but argument is of type ‘cl_uint *’ {aka ‘unsigned int *’}
+ clCreateProgramWithSource(cl_context        /* context */,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~
+../q.c:48:60: warning: pointer targets in passing argument 3 of ‘clCreateKernel’ differ in signedness [-Wpointer-sign]
+     cl_kernel kernel = clCreateKernel(pgm, "swapAdjacent", &ret);
+                                                            ^~~~
+In file included from ../q.c:3:
+/usr/include/CL/cl.h:1207:1: note: expected ‘cl_int *’ {aka ‘int *’} but argument is of type ‘cl_uint *’ {aka ‘unsigned int *’}
+ clCreateKernel(cl_program      /* program */,
+ ^~~~~~~~~~~~~~
+Finished building: ../q.c
+ 
+Building target: SwapAdjacent
+Invoking: GCC C Linker
+gcc -L/usr/lib/x86_64-linux-gnu -o "SwapAdjacent"  ./q.o   -lOpenCL
+Finished building target: SwapAdjacent
+ 
+
+11:41:06 Build Finished. 0 errors, 9 warnings. (took 738ms)
+

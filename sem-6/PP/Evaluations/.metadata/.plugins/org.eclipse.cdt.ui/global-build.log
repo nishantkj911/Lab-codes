@@ -1,0 +1,71 @@
+14:37:18 **** Build of configuration Debug for project eval1 ****
+make all 
+Building file: ../q.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/mpich -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"q.d" -MT"q.d" -o "q.o" "../q.c"
+../q.c: In function ‘main’:
+../q.c:10:21: warning: passing argument 2 of ‘MPI_Init’ from incompatible pointer type [-Wincompatible-pointer-types]
+     MPI_Init(&argc, &argv);
+                     ^
+In file included from ../q.c:3:0:
+/usr/include/mpich/mpi.h:1115:5: note: expected ‘char ***’ but argument is of type ‘const char ***’
+ int MPI_Init(int *argc, char ***argv);
+     ^
+Finished building: ../q.c
+ 
+Building target: eval1
+Invoking: GCC C Linker
+gcc -L/usr/lib/mpich/lib -o "eval1"  ./q.o   -lmpi
+Finished building target: eval1
+ 
+14:37:33 **** Incremental Build of configuration Debug for project eval1 ****
+make all 
+Building file: ../q.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/mpich -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"q.d" -MT"q.d" -o "q.o" "../q.c"
+Finished building: ../q.c
+ 
+Building target: eval1
+Invoking: GCC C Linker
+gcc -L/usr/lib/mpich/lib -o "eval1"  ./q.o   -lmpi
+Finished building target: eval1
+ 
+14:39:07 **** Incremental Build of configuration Debug for project eval1 ****
+make all 
+Building file: ../q.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/mpich -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"q.d" -MT"q.d" -o "q.o" "../q.c"
+Finished building: ../q.c
+ 
+Building target: eval1
+Invoking: GCC C Linker
+gcc -L/usr/lib/mpich/lib -o "eval1"  ./q.o   -lmpi
+Finished building target: eval1
+ 
+14:39:23 **** Incremental Build of configuration Debug for project eval1 ****
+make all 
+Building file: ../q.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/mpich -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"q.d" -MT"q.d" -o "q.o" "../q.c"
+Finished building: ../q.c
+ 
+Building target: eval1
+Invoking: GCC C Linker
+gcc -L/usr/lib/mpich/lib -o "eval1"  ./q.o   -lmpi
+Finished building target: eval1
+ 
+14:44:03 **** Incremental Build of configuration Debug for project eval1 ****
+make all 
+Building file: ../q.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/mpich -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"q.d" -MT"q.d" -o "q.o" "../q.c"
+Finished building: ../q.c
+ 
+Building target: eval1
+Invoking: GCC C Linker
+gcc -L/usr/lib/mpich/lib -o "eval1"  ./q.o   -lmpi
+Finished building target: eval1
+ 
+14:45:35 **** Incremental Build of configuration Debug for project eval1 ****
+make all 
+make: Nothing to be done for 'all'.

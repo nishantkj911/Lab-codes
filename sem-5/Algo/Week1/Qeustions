@@ -1,0 +1,14 @@
+1) Write an algorithm and program to implement a doubly linked list with the following operations:
+D   --Create the list by adding each node at the front
+D	--Insert an new node to the left of the node whose key value is read as input
+D	--Delete all occurrances of a given key if it is found, otherwise display an appropriate mssg.
+D	--Search a node based on its key value
+D   --Display the contents of the list
+
+2) Write a program to construct a binary tree to support the following operations(assume no duplicate elements while constructing the tree):
+D	--Given a key perform a search in the binary search tree. If the key is found, display a message else insert the key in the BST.
+D	--Display the tree using inorder, preorder and postorder traversal methods.
+
+3)WAP to implement the following graph representations and display them:
+	--Adjacency List
+	--Adjacency matrix

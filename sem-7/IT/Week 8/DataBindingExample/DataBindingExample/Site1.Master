@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Placement.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Placement Portal</title>
+    <style>
+        .logo{
+            background-color:darksalmon;
+        }
+        html, body{
+            margin: 0;
+            padding:0;
+            
+            
+        }
+       .footer{
+           left:0;
+           bottom:0;
+           position:fixed;
+           width:100%;
+       }
+
+    </style>
+</head>
+<body data-spy="scroll">
+    <div class="container text-center logo" >
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="logo.jpeg" alt="Logo" class="img-responsive img-thumbnail" />
+            </div>
+            <div class="col-lg-6"><h1>Placement Portal</h1></div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-bottom:auto">
+        
+              <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+          
+
+    </div>
+
+        <footer style="background-color:grey">
+                    <p> Contact Details </p>
+                     
+                     <p><span class="glyphicon glyphicon-phone"> 3786329737</span></p> 
+                     <p><span class="glyphicon glyphicon-envelope"> helpline@cdlc.com</span></p>
+                     <p><span class="glyphicon glyphicon-map-marker"> Chicago,US</span></p>
+                     Creme de la creme Institute<br />
+                     All rights reserved
+         </footer>
+</body>
+</html>
+

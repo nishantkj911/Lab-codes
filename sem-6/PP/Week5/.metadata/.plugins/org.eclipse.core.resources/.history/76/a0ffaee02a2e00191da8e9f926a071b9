@@ -1,0 +1,81 @@
+#include <CL/cl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+#define MAX_SOURCE_SIZE (0x1000000)
+
+int main(int argc, char const *argv[])
+{
+    int n;
+    printf("Enter the no. of elements \n");
+    scanf("%i", &n);
+
+    unsigned int *A = calloc(n, sizeof(unsigned int));
+    unsigned int *B = calloc(n, sizeof(unsigned int));
+
+    printf("Enter the elements\n");
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%i", &A[i]);
+    }
+
+    char *sourcePgm = calloc(MAX_SOURCE_SIZE, sizeof(char));
+    size_t pgmSize;
+    FILE *fp = fopen("kernel.cl", "r");
+    if (fp == NULL)
+    {
+        printf("Couldn't open kernel\n");
+        exit(EXIT_FAILURE);
+    }
+
+    pgmSize = fread(sourcePgm, 1, MAX_SOURCE_SIZE, fp);
+    fclose(fp);
+
+    cl_platform_id plt;
+    cl_device_id devid;
+    cl_int numplt, numdevid;
+    cl_uint ret;
+
+    ret = clGetPlatformIDs(1, &plt, &numplt);
+    ret = clGetDeviceIDs(plt, CL_DEVICE_TYPE_GPU, 1, &devid, &numdevid);
+
+    cl_context context = clCreateContext(NULL, 1, &devid, NULL, NULL, &ret);
+    cl_command_queue cq = clCreateCommandQueue(context, devid, NULL, &ret);
+
+    cl_mem aMemObj = clCreateBuffer(context, CL_MEM_READ_ONLY, n * sizeof(int), NULL, &ret);
+    cl_mem bMemObj = clCreateBuffer(context, CL_MEM_WRITE_ONLY, n * sizeof(int), NULL, &ret);
+
+    ret = clEnqueueWriteBuffer(cq, aMemObj, CL_TRUE, 0, n * sizeof(int), A, 0, NULL, NULL);
+
+    cl_program program = clCreateProgramWithSource(context, 1, &sourcePgm, &pgmSize, &ret);
+    clBuildProgram(program, 1, &devid, NULL, NULL, NULL);
+
+    cl_kernel kernel = clCreateKernel(program, "oneCompl", &ret);
+
+    ret = clSetKernelArg(kernel, 0, sizeof(cl_mem), &aMemObj);
+    ret = clSetKernelArg(kernel, 1, sizeof(cl_mem), &bMemObj);
+
+    size_t global_work_size = n;
+    size_t local_work_size = 1;
+
+    ret = clEnqueueNDRangeKernel(cq, kernel, 1, NULL, &global_work_size, &local_work_size, 0, NULL, NULL);
+    ret = clFinish(cq);
+
+    ret = clEnqueueReadBuffer(cq, bMemObj, CL_TRUE, 0, n * sizeof(int), B, 0, NULL, NULL);
+
+    printf("The elements are\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%i\n", B[i]);
+    }
+
+    ret = clFlush(cq);
+    ret = clReleaseKernel(kernel);
+    ret = clReleaseProgram(program);
+    ret = clReleaseMemObject(aMemObj);
+    ret = clReleaseMemObject(bMemObj);
+    ret = clReleaseCommandQueue(cq);
+    ret = clReleaseContext(context);
+    return 0;
+}

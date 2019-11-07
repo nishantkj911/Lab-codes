@@ -1,0 +1,16 @@
+16:50:36 **** Incremental Build of configuration Debug for project q2B ****
+make all 
+Building file: ../matAdd2B.cu
+Invoking: NVCC Compiler
+/usr/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "." -M -o "matAdd2B.d" "../matAdd2B.cu"
+/usr/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "matAdd2B.o" "../matAdd2B.cu"
+Finished building: ../matAdd2B.cu
+ 
+Building target: q2B
+Invoking: NVCC Linker
+/usr/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "q2B"  ./matAdd2B.o   
+Finished building target: q2B
+ 
+
+16:50:39 Build Finished (took 2s.973ms)
+
