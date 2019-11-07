@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="579.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.MakeBookingController">
+   <children>
+      <ChoiceBox fx:id="cb1" layoutX="345.0" layoutY="53.0" prefHeight="34.0" prefWidth="194.0" />
+      <Label layoutX="71.0" layoutY="53.0" prefHeight="34.0" prefWidth="184.0" text="Choose the room type*">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="120.0" prefHeight="34.0" prefWidth="212.0" text="Enter the no. of people living">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="jtf1" layoutX="345.0" layoutY="120.0" prefHeight="34.0" prefWidth="201.0" promptText="Default is 1" />
+      <Button fx:id="jb1" layoutX="70.0" layoutY="363.0" mnemonicParsing="false" onAction="#startBooking" prefHeight="51.0" prefWidth="146.0" text="Initiate Booking" />
+      <Label alignment="CENTER" layoutX="346.0" layoutY="328.0" prefHeight="34.0" prefWidth="200.0" text="Legend" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextArea editable="false" layoutX="329.0" layoutY="363.0" prefHeight="187.0" prefWidth="253.0" text="Suite: Rs. 30,000 per night&#10;Honemoon Suite: Rs. 25,000 per night&#10;Deluxe: Rs. 15,000 per night&#10;&#10;Booking time will be from&#10;12 PM to 11:59 PM only&#10;&#10;Press the button after entering all data" />
+      <Label layoutX="71.0" layoutY="183.0" prefHeight="34.0" prefWidth="212.0" text="Enter the customer*">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="jtf2" layoutX="341.0" layoutY="183.0" prefHeight="34.0" prefWidth="201.0" promptText="Register if not already" />
+      <Label layoutX="71.0" layoutY="246.0" prefHeight="34.0" prefWidth="212.0" text="Enter Check-in date">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="293.0" prefHeight="34.0" prefWidth="212.0" text="Enter Check-out date">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="jtf21" layoutX="341.0" layoutY="246.0" prefHeight="34.0" prefWidth="222.0" promptText="Default: Today (format: DD-MM-YYYY)" />
+      <TextField fx:id="jtf22" layoutX="341.0" layoutY="293.0" prefHeight="34.0" prefWidth="222.0" promptText="Default: Tomorrow" />
+   </children>
+</AnchorPane>
