@@ -1,0 +1,13 @@
+1. find sum of given n nos using a 1D array using a function
+2. Implement linear search on a list of integers
+3. Find sum of 2 matrices using a function named add with suitable parameters
+4. Find biggest in a list of nos using a function
+
+Addl Exercises:
+
+1. Random no. generation anf finding the frequency of occurence
+Generate a large no of random nos(say around 10k). Each sample value should be b/w -100 and 100(ints). After generating the samples find the frequency of each distinct sample. Repeat the above steps with unknown size(Hint: user will decide at run time). The purpose is to realise adv. and disadv. of using array
+
+2. Addition of polynomials with two terms
+To perform different operations on polynomial with two terms x, y, using 2d array representations. Operations like addition and multiplicaiton have to be implemented [ref: J.P Trembly]. It the 2D array repr. is sparse then optimize the memory usage by using suitable alternative repr.x`
+
